@@ -1,6 +1,7 @@
 import admin from 'firebase-admin';
+import dotenv from 'dotenv';
 // import fs from 'fs';
-
+dotenv.config();
 
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
  // fs.readFileSync(new URL('./firebase-key.json', import.meta.url))
