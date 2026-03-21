@@ -13,6 +13,13 @@ import enquiryRoutes from './routes/enquiries.js';
 dotenv.config();
 
 const app = express();
+
+
+app.use(cors({
+  origin: "https://rental-frontend-iota.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI =
   process.env.MONGODB_URI;
@@ -20,6 +27,7 @@ const MONGODB_URI =
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
+  'https://rental-frontend-iota.vercel.app',
   process.env.CLIENT_ORIGIN,
 ].filter(Boolean);
 
