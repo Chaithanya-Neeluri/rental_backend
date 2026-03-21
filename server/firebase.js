@@ -1,10 +1,10 @@
 import admin from 'firebase-admin';
-import fs from 'fs';
+// import fs from 'fs';
 
-// Read JSON file manually
-const serviceAccount = JSON.parse(
-  fs.readFileSync(new URL('./firebase-key.json', import.meta.url))
-);
+
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+ // fs.readFileSync(new URL('./firebase-key.json', import.meta.url))
+
 
 let app;
 
