@@ -41,9 +41,7 @@ const serializeEnquiry = (enquiry) => {
 // Tenant creates an enquiry against a property.
 router.post('/', requireAuth, async (req, res) => {
   try {
-    if (req.user.role !== 'tenant') {
-      return res.status(403).json({ message: 'Only tenants can create enquiries' });
-    }
+   
 
     const { propertyId, message } = req.body;
 

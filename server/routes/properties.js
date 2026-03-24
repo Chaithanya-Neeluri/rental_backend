@@ -289,10 +289,7 @@ router.get('/owner/:ownerId', requireAuth, async (req, res) => {
 // Tenant view: property details + owner's phone/email for enquiries/contact.
 router.get('/:propertyId/details', requireAuth, async (req, res) => {
   try {
-    if (req.user.role !== 'tenant') {
-      return res.status(403).json({ message: 'Only tenants can view property details' });
-    }
-
+   
     const { propertyId } = req.params;
 
     const property = await Property.findById(propertyId).populate({
