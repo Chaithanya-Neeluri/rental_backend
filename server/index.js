@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors({
   origin: "https://rental-frontend-iota.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
   credentials: true
 }));
 const PORT = process.env.PORT || 5000;
